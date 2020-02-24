@@ -1,0 +1,36 @@
+{
+  "name": "floatify-contracts",
+  "version": "1.0.0",
+  "description": "Floatify contracts",
+  "main": "index.js",
+  "scripts": {
+    "compile": "rm -rf build && npx oz compile --solc-version 0.5.12",
+    "test": "source .env && npx truffle test",
+    "test-setup": "source .env && ganache-cli -d -e 0 -i 999 -f https://mainnet.infura.io/v3/$INFURA_ID -u $EXCHANGE_ADDRESS -u $FLOATIFY_ADDRESS",
+    "coverage": "source .env && npx truffle run coverage --network development",
+    "lint": "npx solhint contracts/**/*.sol"
+  },
+  "dependencies": {
+    "@openzeppelin/gsn-provider": "^0.1.9",
+    "dotenv": "^6.2.0",
+    "truffle": "^5.0.43",
+    "truffle-hdwallet-provider": "^1.0.3",
+    "truffle-security": "^1.7.1",
+    "web3": "^1.2.1"
+  },
+  "devDependencies": {
+    "@openzeppelin/cli": "^2.6.0",
+    "@openzeppelin/contracts-ethereum-package": "^2.4.0",
+    "@openzeppelin/gsn-helpers": "^0.2.3",
+    "@openzeppelin/test-environment": "^0.1.1",
+    "@openzeppelin/test-helpers": "^0.5.4",
+    "@openzeppelin/upgrades": "^2.6.0",
+    "chai": "^4.2.0",
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-chai-friendly": "^0.5.0",
+    "eslint-plugin-import": "^2.19.1",
+    "solhint": "^2.3.0",
+    "solidity-coverage": "^0.7.1"
+  }
+}

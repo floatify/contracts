@@ -1,0 +1,437 @@
+{
+  "contracts": {
+    "Swapper": {
+      "address": "0xC78D7906a750adBce52FC23878743287bf061984",
+      "constructorCode": "608060405261337e806100136000396000f3fe",
+      "bodyBytecodeHash": "19df713cbb99a5a5c9fe406d2f0c639d30c49918b6b7747b0d5051d740e9ba0f",
+      "localBytecodeHash": "8d52bdab193417ff60ed5f0c0399bfae78f8a536f1d552ae8852bccbfa264ca5",
+      "deployedBytecodeHash": "8d52bdab193417ff60ed5f0c0399bfae78f8a536f1d552ae8852bccbfa264ca5",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 894,
+          "type": "t_bool",
+          "src": "757:24:6"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 896,
+          "type": "t_bool",
+          "src": "876:25:6"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 952,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 701,
+          "type": "t_address",
+          "src": "526:22:4"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 814,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:4"
+        },
+        {
+          "contract": "GSNRecipient",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/GSN/GSNRecipient.sol",
+          "label": "_relayHub",
+          "astId": 67,
+          "type": "t_address",
+          "src": "1133:25:1"
+        },
+        {
+          "contract": "Swapper",
+          "path": "contracts/Swapper.sol",
+          "label": "version",
+          "astId": 2842,
+          "type": "t_uint256",
+          "src": "1321:22:22"
+        },
+        {
+          "contract": "Swapper",
+          "path": "contracts/Swapper.sol",
+          "label": "isValidUser",
+          "astId": 2846,
+          "type": "t_mapping<t_bool>",
+          "src": "1348:44:22"
+        },
+        {
+          "contract": "Swapper",
+          "path": "contracts/Swapper.sol",
+          "label": "forwarderFactory",
+          "astId": 2848,
+          "type": "t_address",
+          "src": "1396:31:22"
+        },
+        {
+          "contract": "Swapper",
+          "path": "contracts/Swapper.sol",
+          "label": "daiContract",
+          "astId": 2850,
+          "type": "t_address",
+          "src": "1432:25:22"
+        },
+        {
+          "contract": "Swapper",
+          "path": "contracts/Swapper.sol",
+          "label": "chaiContract",
+          "astId": 2852,
+          "type": "t_address",
+          "src": "1461:25:22"
+        },
+        {
+          "contract": "Swapper",
+          "path": "contracts/Swapper.sol",
+          "label": "knpContract",
+          "astId": 2854,
+          "type": "t_address",
+          "src": "1490:37:22"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "Forwarder": {
+      "address": "0x11dD9792020dD93e62cE303f6B50Ab0537f7BA43",
+      "constructorCode": "6080604052612cb2806100136000396000f3fe",
+      "bodyBytecodeHash": "277d28f32557715bb0bcc1ff6b4402581be6eb952fc597287952b0515cd5ed3d",
+      "localBytecodeHash": "0aa10d07f549efbda9af1ab0b9fa0caae040702ef4f2960f706fa846ddff9ed5",
+      "deployedBytecodeHash": "0aa10d07f549efbda9af1ab0b9fa0caae040702ef4f2960f706fa846ddff9ed5",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 894,
+          "type": "t_bool",
+          "src": "757:24:6"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 896,
+          "type": "t_bool",
+          "src": "876:25:6"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 952,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 701,
+          "type": "t_address",
+          "src": "526:22:4"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 814,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:4"
+        },
+        {
+          "contract": "Forwarder",
+          "path": "contracts/Forwarder.sol",
+          "label": "floatify",
+          "astId": 1784,
+          "type": "t_address",
+          "src": "1217:23:16"
+        },
+        {
+          "contract": "Forwarder",
+          "path": "contracts/Forwarder.sol",
+          "label": "version",
+          "astId": 1786,
+          "type": "t_uint256",
+          "src": "1267:22:16"
+        },
+        {
+          "contract": "Forwarder",
+          "path": "contracts/Forwarder.sol",
+          "label": "daiContract",
+          "astId": 1788,
+          "type": "t_address",
+          "src": "1333:25:16"
+        },
+        {
+          "contract": "Forwarder",
+          "path": "contracts/Forwarder.sol",
+          "label": "chaiContract",
+          "astId": 1790,
+          "type": "t_address",
+          "src": "1362:25:16"
+        },
+        {
+          "contract": "Forwarder",
+          "path": "contracts/Forwarder.sol",
+          "label": "knpContract",
+          "astId": 1792,
+          "type": "t_address",
+          "src": "1391:37:16"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "ForwarderFactory": {
+      "address": "0xaFffFB8fB5C7d81B9344A39Fa6692343411285C8",
+      "constructorCode": "6080604052604051806020016100149061003a565b6020820181038252601f19601f8201166040525080519060200120606681905550610047565b610d2280612d1083390190565b612cba806100566000396000f3fe",
+      "bodyBytecodeHash": "2378f2624d929ebb3f29bc7155550fe573cd2a6cc30d64b145343c32585dc4fe",
+      "localBytecodeHash": "b480431a4d1aac724ccabd432247ab8422c9ff8a0091aec7066435b0f78e106a",
+      "deployedBytecodeHash": "b480431a4d1aac724ccabd432247ab8422c9ff8a0091aec7066435b0f78e106a",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_bytes32": {
+          "id": "t_bytes32",
+          "kind": "elementary",
+          "label": "bytes32"
+        },
+        "t_array:dyn<t_address>": {
+          "id": "t_array:dyn<t_address>",
+          "valueType": "t_address",
+          "length": "dyn",
+          "kind": "array",
+          "label": "address[]"
+        },
+        "t_mapping<t_address>": {
+          "id": "t_mapping<t_address>",
+          "valueType": "t_address",
+          "label": "mapping(key => address)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 894,
+          "type": "t_bool",
+          "src": "757:24:6"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 896,
+          "type": "t_bool",
+          "src": "876:25:6"
+        },
+        {
+          "contract": "Initializable",
+          "path": "@openzeppelin/upgrades/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 952,
+          "type": "t_array:50<t_uint256>",
+          "src": "1951:29:6"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "_owner",
+          "astId": 701,
+          "type": "t_address",
+          "src": "526:22:4"
+        },
+        {
+          "contract": "Ownable",
+          "path": "@openzeppelin/contracts-ethereum-package/contracts/ownership/Ownable.sol",
+          "label": "______gap",
+          "astId": 814,
+          "type": "t_array:50<t_uint256>",
+          "src": "2471:29:4"
+        },
+        {
+          "contract": "ProxyFactory",
+          "path": "@openzeppelin/upgrades/contracts/upgradeability/ProxyFactory.sol",
+          "label": "contractCodeHash",
+          "astId": 1407,
+          "type": "t_bytes32",
+          "src": "183:32:13"
+        },
+        {
+          "contract": "ForwarderFactory",
+          "path": "contracts/ForwarderFactory.sol",
+          "label": "version",
+          "astId": 2322,
+          "type": "t_uint256",
+          "src": "1243:22:17"
+        },
+        {
+          "contract": "ForwarderFactory",
+          "path": "contracts/ForwarderFactory.sol",
+          "label": "users",
+          "astId": 2325,
+          "type": "t_array:dyn<t_address>",
+          "src": "1269:22:17"
+        },
+        {
+          "contract": "ForwarderFactory",
+          "path": "contracts/ForwarderFactory.sol",
+          "label": "getForwarder",
+          "astId": 2329,
+          "type": "t_mapping<t_address>",
+          "src": "1295:48:17"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {
+    "floatify-contracts/ForwarderFactory": [
+      {
+        "address": "0xE539d876c77C5D87a669945382FaDcbEf0F295B7",
+        "version": "1.0.0",
+        "implementation": "0xaFffFB8fB5C7d81B9344A39Fa6692343411285C8",
+        "admin": "0x0B8aDCa191d4Daf522150C7e7aEa70298A9109Ec",
+        "kind": "Upgradeable"
+      }
+    ],
+    "floatify-contracts/Forwarder": [
+      {
+        "address": "0x29a20Dd1011A1acBF773aCE0838c228310847FCc",
+        "version": "1.0.0",
+        "implementation": "0x11dD9792020dD93e62cE303f6B50Ab0537f7BA43",
+        "admin": "0x0B8aDCa191d4Daf522150C7e7aEa70298A9109Ec",
+        "kind": "Upgradeable"
+      }
+    ],
+    "floatify-contracts/Swapper": [
+      {
+        "address": "0x21cA4d039Cd5E556Fbf0013c9C1f156dD9E62fea",
+        "version": "1.0.0",
+        "implementation": "0xC78D7906a750adBce52FC23878743287bf061984",
+        "admin": "0x0B8aDCa191d4Daf522150C7e7aEa70298A9109Ec",
+        "kind": "Upgradeable"
+      }
+    ]
+  },
+  "manifestVersion": "2.2",
+  "version": "1.0.0",
+  "dependencies": {
+    "@openzeppelin/contracts-ethereum-package": {
+      "package": "0x778dddF23Ec1B5Cb18394c6C110480CaaDB3B0f6",
+      "version": "2.4.0"
+    }
+  },
+  "proxyAdmin": {
+    "address": "0x0B8aDCa191d4Daf522150C7e7aEa70298A9109Ec"
+  }
+}
