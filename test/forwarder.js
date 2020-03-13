@@ -273,7 +273,7 @@ contract('Forwarder', async (accounts) => {
     expect(parseFloat(chaiBalance)).to.be.above(initialChaiBalance);
   });
 
-  it.skip('converts any received tokens to Chai and sends them to the owner', async () => {
+  it('converts any received tokens to Chai and sends them to the owner', async () => {
     // Confirm initial balances
     const initialChaiBalance = parseFloat(await getTokenBalance('chai', alice));
     expect(await getTokenBalance('maker', alice)).to.equal('0');
