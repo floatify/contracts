@@ -8,6 +8,7 @@ const cdaiAbi = require('./externalAbis/cDAI.json').abi;
 const chaiAbi = require('./externalAbis/chai.json').abi;
 const makerAbi = require('./externalAbis/maker.json').abi;
 const usdcAbi = require('./externalAbis/usdc.json').abi;
+const batAbi = require('./externalAbis/bat.json').abi;
 const saiAbi = require('./externalAbis/sai.json').abi;
 const potAbi = require('./externalAbis/pot.json').abi;
 const endAbi = require('./externalAbis/end.json').abi;
@@ -17,6 +18,7 @@ const cdaiAddress = '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643';
 const chaiAddress = '0x06AF07097C9Eeb7fD685c692751D5C66dB49c215';
 const makerAddress = '0x9f8F72aA9304c8B593d555F12eF6589cC3A579A2';
 const usdcAddress = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48';
+const batAddress = '0x0D8775F648430679A709E98d2b0Cb6250d2887EF';
 const kyberAddress = '0x818E6FECD516Ecc3849DAf6845e3EC868087B755'; // Kyber Network Proxy address
 const saiAddress = '0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359';
 const potAddress = '0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7';
@@ -29,6 +31,7 @@ const CdaiContract = new web3.eth.Contract(cdaiAbi, cdaiAddress);
 const ChaiContract = new web3.eth.Contract(chaiAbi, chaiAddress);
 const MakerContract = new web3.eth.Contract(makerAbi, makerAddress);
 const UsdcContract = new web3.eth.Contract(usdcAbi, usdcAddress);
+const BatContract = new web3.eth.Contract(batAbi, batAddress);
 const SaiContract = new web3.eth.Contract(saiAbi, saiAddress);
 const PotContract = new web3.eth.Contract(potAbi, potAddress);
 const EndContract = new web3.eth.Contract(endAbi, endAddress);
@@ -53,6 +56,10 @@ const getTokenContract = function getTokenContract(token) {
       return ChaiContract;
     case 'maker':
       return MakerContract;
+    case 'usdc':
+      return UsdcContract;
+    case 'bat':
+      return BatContract;
     default:
       throw Error('Invalid token specified');
   }
@@ -130,6 +137,7 @@ module.exports = {
   ChaiContract,
   SaiContract,
   UsdcContract,
+  BatContract,
   PotContract,
   EndContract,
   // Addresses
@@ -138,6 +146,7 @@ module.exports = {
   chaiAddress,
   makerAddress,
   usdcAddress,
+  batAddress,
   kyberAddress,
   potAddress,
   saiAddress,
