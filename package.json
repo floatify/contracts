@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "rm -rf build && npx oz compile --solc-version 0.5.12",
     "test": "source .env && npx truffle test",
-    "test-setup": "source .env && ganache-cli -d -e 0 -i 999 -f https://mainnet.infura.io/v3/$INFURA_ID -u $EXCHANGE_ADDRESS -u $FLOATIFY_ADDRESS",
+    "test-setup": "source .env && ganache-cli -d -e 0 -i 999 -f https://mainnet.infura.io/v3/$INFURA_ID -u $EXCHANGE_ADDRESS -u $FLOATIFY_ADDRESS -u $END_AUTHORIZED_USER",
     "coverage": "source .env && npx truffle run coverage --network development",
     "lint": "npx solhint contracts/**/*.sol"
   },

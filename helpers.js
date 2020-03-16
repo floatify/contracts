@@ -10,6 +10,7 @@ const makerAbi = require('./externalAbis/maker.json').abi;
 const usdcAbi = require('./externalAbis/usdc.json').abi;
 const saiAbi = require('./externalAbis/sai.json').abi;
 const potAbi = require('./externalAbis/pot.json').abi;
+const endAbi = require('./externalAbis/end.json').abi;
 
 const daiAddress = '0x6B175474E89094C44Da98b954EedeAC495271d0F';
 const cdaiAddress = '0x5d3a536E4D6DbD6114cc1Ead35777bAB948E3643';
@@ -19,6 +20,7 @@ const usdcAddress = '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48';
 const kyberAddress = '0x818E6FECD516Ecc3849DAf6845e3EC868087B755'; // Kyber Network Proxy address
 const saiAddress = '0x89d24A6b4CcB1B6fAA2625fE562bDD9a23260359';
 const potAddress = '0x197E90f9FAD81970bA7976f33CbD77088E5D7cf7';
+const endAddress = '0xaB14d3CE3F733CACB76eC2AbE7d2fcb00c99F3d5';
 // const exchangeAddress = process.env.EXCHANGE_ADDRESS; // random address to get DAI from
 
 // Instantiate contract instances
@@ -29,6 +31,7 @@ const MakerContract = new web3.eth.Contract(makerAbi, makerAddress);
 const UsdcContract = new web3.eth.Contract(usdcAbi, usdcAddress);
 const SaiContract = new web3.eth.Contract(saiAbi, saiAddress);
 const PotContract = new web3.eth.Contract(potAbi, potAddress);
+const EndContract = new web3.eth.Contract(endAbi, endAddress);
 
 // Define variables we need. Values are assigned in the global beforeEach() hook
 // let FloatifyInstance; // instance of FloatifyAccount contract
@@ -128,6 +131,7 @@ module.exports = {
   SaiContract,
   UsdcContract,
   PotContract,
+  EndContract,
   // Addresses
   daiAddress,
   cdaiAddress,

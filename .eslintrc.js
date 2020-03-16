@@ -49,6 +49,12 @@ module.exports = {
     // to use eslint-plugin-chai-friendly
     // source: https://www.npmjs.com/package/eslint-plugin-chai-friendly
     'no-unused-expressions': 0,
-    'chai-friendly/no-unused-expressions': 2
+    'chai-friendly/no-unused-expressions': 2,
+
+    'max-len': ["error", {
+      "code": 120,
+      "ignoreUrls": true,
+      "ignoreRegExpLiterals": true,
+    }],
   }
 }

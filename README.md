@@ -22,6 +22,7 @@ Next, create a file called `.env` that looks like this:
 export INFURA_ID=yourInfuraId
 export EXCHANGE_ADDRESS=0x447a9652221f46471a2323B98B73911cda58FD8A
 export FLOATIFY_ADDRESS=0xF6f9748308939416B758Ab3E656Db7ADd9928F06
+export END_AUTHORIZED_USER=0xBE8E3e3618f7474F8cB1d074A26afFef007E98FB
 export MYTHX_API_KEY=yourMythxApiKey
 export MNEMONIC="your 12 word seed phrase"
 ```
@@ -30,6 +31,7 @@ Where:
 
 - The exchange address should be an address that has various ERC20 tokens for testing
 - The Floatify address should be an address that has plenty of ETH for sending transactions
+- The End authorized user address is an address authorized to begin the emergency shutdown process
 
 The addresses shown above for each should be suitable. *The exchange address and floatify address
 are environment variables (as opposed to simply being defined within the JS files) so they
