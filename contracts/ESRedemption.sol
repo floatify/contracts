@@ -12,13 +12,9 @@ import "./IChai.sol";
  * known as a Global Settlement) this contract can be used to simplify
  * the process of cashing out your Chai or Dai. The Emergency Shutdown (ES)
  * process lets Dai holders redeem 1 DAI for $1 worth of ETH. This contract
- *  aims to remove exposure to the volatility of Ether by providing two options:
- *   1. Redeem the DAI for ETH, then convert ETH to USDC. The USDC will be
- *      sent to the address that triggered the transaction.
- *   2. Redeem the DAI for ETH, then send the Ether to a liqudation address.
- *      This is intended for use with systems like Wyre, where users have a
- *      designated address, and all Ether sent to that address is automatically
- *      liquidated and sent to their bank account.
+ * aims to remove exposure to the volatility of Ether by enabling users
+ * to redeem the DAI for ETH/BAT, then convert the ETH/BAT to USDC. The USDC
+ * will be sent to the address that triggered the transaction.
  *
  * @dev WARNING: DO NOT CHANGE THE ORDER OF INHERITANCE
  * Because this is an upgradable contract, doing so changes the order of the
