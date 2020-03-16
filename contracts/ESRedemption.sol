@@ -6,7 +6,6 @@ import "@openzeppelin/contracts-ethereum-package/contracts/GSN/GSNRecipient.sol"
 import "@openzeppelin/contracts-ethereum-package/contracts/math/SafeMath.sol";
 import "./IERC20.sol";
 import "./IChai.sol";
-import "./IKyberNetworkProxy.sol";
 
 /**
  * @notice In the event that MakerDAO triggers an Emergency Shutdown (also
@@ -42,12 +41,14 @@ contract IUniswapExchange {
 }
 
 interface IEnd {
+  // Maker Emergency Shutdown interface
+  // https://etherscan.io/address/0xaB14d3CE3F733CACB76eC2AbE7d2fcb00c99F3d5#code
   function pack(uint256 wad) external;
   function cash(bytes32 ilk, uint wad) external;
 }
 
-
 contract ESRedemption is Initializable, Ownable, GSNRecipient {
+  // Ownable is only used to restrict who can withdraw funds to RelayHub
   using SafeMath for uint256;
 
   IERC20 public batContract;
@@ -61,10 +62,7 @@ contract ESRedemption is Initializable, Ownable, GSNRecipient {
   IUniswapExchange public uniswapBat;
 
   /**
-   * @notice Constructor, calls other constructors. Can only be called once
-   * due to initializer modifier
-   * @dev Called initializeSwapper instead of initialize to avoid having the
-   * same function signature as Owanble's initializer
+   * @notice Constructor, can only be called once due to initializer modifier
    */
   function initializeEsRedemption() public initializer {
     // Call constructors of contracts we inherit from
@@ -122,12 +120,12 @@ contract ESRedemption is Initializable, Ownable, GSNRecipient {
     // Get contract's BAT balance
     IERC20 _bat = IERC20(0x0D8775F648430679A709E98d2b0Cb6250d2887EF);
     uint256 _batBalance = _bat.balanceOf(address(this));
-    // Trade is valid for one week (allows tx time to process in clogged market)
-    uint256 _deadline = now + 1 weeks;
     // We don't worry about the exchange rate since this is an emergency
     // and market conditions may be unpredictable
     uint256 _minTokensBought = 1;
     uint256 _minEthBought = 1;
+    // Trade is valid for one week (allows tx time to process in clogged market)
+    uint256 _deadline = now + 1 weeks;
     // Execute swap
     uniswapBat.tokenToTokenSwapInput(_batBalance, _minTokensBought, _minEthBought, _deadline, address(usdcContract));
   }
@@ -141,9 +139,10 @@ contract ESRedemption is Initializable, Ownable, GSNRecipient {
     endContract.pack(_daiAmount);
 
     // Only two collateral types in MCD that we need to worry about
+    // TODO do we need to call this with "SAI" also?
     endContract.cash("ETH-A", _daiAmount);
     endContract.cash("BAT_A", _daiAmount);
-    endContract.cash("SAI", _daiAmount); // TODO is this needed?
+    // endContract.cash("SAI", _daiAmount); // TODO is this needed?
 
     // For reference the actual bytes32 Ilk values for ETH and BAT are below
     // ETH-A: 0x4554482d41000000000000000000000000000000000000000000000000000000
@@ -157,11 +156,11 @@ contract ESRedemption is Initializable, Ownable, GSNRecipient {
   function swapChaiForDai(uint256 _daiAmount) private {
     address _user = _msgSender();
     if (_daiAmount == uint256(-1)) {
-      // Withdraw all Chai, denominated in Chai
+      // Redeem all Chai, denominated in Chai
       uint256 _chaiBalance = chaiContract.balanceOf(_user);
       chaiContract.exit(_user, _chaiBalance);
     } else {
-      // Withdraw portion of Chai, demoninated in Dai
+      // Redeem portion of Chai, demoninated in Dai
       chaiContract.draw(_user, _daiAmount);
     }
   }
