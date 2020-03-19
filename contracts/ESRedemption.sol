@@ -137,7 +137,8 @@ contract ESRedemption is Initializable, Ownable, GSNRecipient {
     // Only two collateral types in MCD that we need to worry about
     // TODO do we need to call this with "SAI" also?
     endContract.cash("ETH-A", _daiAmount);
-    endContract.cash("BAT_A", _daiAmount);
+    endContract.cash("BAT-A", _daiAmount);
+    endContract.cash("USDC-A", _daiAmount);
     // endContract.cash("SAI", _daiAmount); // TODO is this needed?
 
     // For reference the actual bytes32 Ilk values for ETH and BAT are below
